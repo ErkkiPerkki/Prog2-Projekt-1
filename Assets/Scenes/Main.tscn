@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr8d2u5nkjvv5"]
+
+[ext_resource type="Script" path="res://Assets/Scrips/Main.cs" id="1_1xmmx"]
+[ext_resource type="PackedScene" uid="uid://fa2xlh7d0wcp" path="res://Assets/Scenes/Grid.tscn" id="2_cyyym"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1xmmx")
+
+[node name="Grid" parent="." instance=ExtResource("2_cyyym")]
+
+[node name="GameUpdate" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="GameUpdate" to="." method="_OnGameUpdate"]
+[connection signal="timeout" from="GameUpdate" to="Grid" method="Update"]
