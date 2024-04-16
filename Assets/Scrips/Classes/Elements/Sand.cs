@@ -6,7 +6,7 @@ namespace ElementSandbox
     {
         public Sand(): base(ElementID.SAND)
         {
-            GD.Print("New sand");
+            //GD.Print("New sand");
         }
 
         public override void Evaluate()

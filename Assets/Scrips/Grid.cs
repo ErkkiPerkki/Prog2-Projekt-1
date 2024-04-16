@@ -1,4 +1,6 @@
 using Godot;
+using System;
+using System.Collections.Generic;
 
 namespace ElementSandbox
 {
@@ -9,18 +11,27 @@ namespace ElementSandbox
 
     public partial class Grid: Node2D
     {
-        static Vector2I TileSize = new(8, 8);
-        static TileMap TileMap;
-        static object ScreenSize = ProjectSettings.GetSetting("display");
+        private static TileMap TileMap;
 
-        //static Vector2I[][] Grid = new Vector2I[][];
+        private static Vector2I TileSize = new(8, 8);
+        private static Vector2I ScreenSize = new (
+            (int)ProjectSettings.GetSetting("display/window/size/viewport_width"),
+            (int)ProjectSettings.GetSetting("display/window/size/viewport_height")
+        );
+        private static Vector2I GridSize = ScreenSize / TileSize;
 
-        static ElementID selectedElement = ElementID.NONE;
+        private static Element?[,] grid = new Element[GridSize.X, GridSize.Y];
+        private static ElementID selectedElement = ElementID.SAND;
 
         enum TileAction {
             Place,
             Remove
         }
+
+        static Dictionary<ElementID, Func<Element>> Elements = new()
+        {
+            {ElementID.SAND, () => new Sand()}
+        };
 
         public override async void _Ready()
         {
@@ -35,6 +46,21 @@ namespace ElementSandbox
                 HandleTileAction(TileAction.Remove);
         }
 
+        static void DrawGrid()
+        {
+            for (int x = 0; x <= GridSize.X; x++) {
+                for (int y = 0; y <= GridSize.Y; y++) {
+                    Vector2I pos = new(x, y);
+                    Element element = grid[x, y];
+                    int currentID = TileMap.GetCellSourceId(0, pos);
+                    int nextID = (int)element.ID;
+
+                    if (currentID == nextID) continue;
+                    TileMap.SetCell(0, pos, nextID);
+                }
+            }
+        }
+
         void HandleTileAction(TileAction action)
         {
             if (TileMap == null) return;
@@ -47,16 +73,28 @@ namespace ElementSandbox
             if (!tileExists) return;
 
             if (action == TileAction.Place) {
-                TileMap.SetCell(0, gridPos, selectedElementID, new(0, 0));
+                //TileMap.SetCell(0, gridPos, selectedElementID, new(0, 0));
+                Element newElement = Elements[selectedElement].Invoke();
+                grid[gridPos.X, gridPos.Y] = newElement;
             }
             else if (action == TileAction.Remove) {
-                TileMap.SetCell(0, gridPos, -1, new(0, 0));
+                //TileMap.SetCell(0, gridPos, -1, new(0, 0));
+                grid[gridPos.X, gridPos.Y] = null;
             }
         }
 
-        public static void Update()
+        public static void _OnGridUpdate()
         {
-            GD.Print(ProjectSettings.GetSetting("display/window/size/viewport_width"));
+            DrawGrid();
+            //Element?[,] nextGrid = new Element[GridSize.X, GridSize.Y];
+
+            //for (int x=0; x <= GridSize.X; x++) {
+            //    for (int y=0; y <= GridSize.Y; y++) {
+            //        nextGrid[x, y] = Elements[ElementID.SAND].Invoke();
+            //    }
+            //}
+
+            //grid = nextGrid;
         }
     }
 }

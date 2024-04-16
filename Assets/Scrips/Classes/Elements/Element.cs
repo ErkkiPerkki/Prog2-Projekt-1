@@ -12,7 +12,7 @@ namespace ElementSandbox
         public Element(ElementID ID = ElementID.NONE)
         {
             _ID = ID;
-            GD.Print($"New Element: [{ID}]");
+            //GD.Print($"New Element: [{ID}]");
         }
 
         public abstract void Evaluate();
