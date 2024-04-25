@@ -77,6 +77,7 @@ namespace ElementSandbox
 
             if (action == TileAction.Place) {
                 Element newElement = Elements[selectedElement].Invoke();
+                newElement.GridPosition = gridPos;
                 grid[gridPos.X, gridPos.Y] = newElement;
             }
             else if (action == TileAction.Remove) {
@@ -111,15 +112,20 @@ namespace ElementSandbox
                     Element? element = grid[x, y];
                     if (element == null) continue;
 
-                    Vector2I? nextMove = element.Evaluate();
-                    //GD.Print(nextMove);
-                    if (nextMove == null) continue;
+                    Vector2I nextMove = element.Evaluate();
 
-                    element.GridPosition += (Vector2I)nextMove;
-                    GD.Print(element.GridPosition);
+                    element.GridPosition += nextMove;
                     nextGrid[element.GridPosition.X, element.GridPosition.Y] = element;
                 }
             }
+
+            //for (int x = 0; x < GridSize.X; x++) {
+            //    for (int y = 0; y < GridSize.Y; y++) {
+            //        if (nextGrid[x, y] == null) continue;
+
+            //        GD.Print(nextGrid[x, y]);
+            //    }
+            //}
 
             grid = nextGrid;
             DrawGrid();

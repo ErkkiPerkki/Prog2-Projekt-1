@@ -22,15 +22,15 @@ namespace ElementSandbox
             foreach (KeyValuePair<string, Vector2I> pair in Grid.Directions) {
                 Vector2I pos = GridPosition + pair.Value;
                 bool isOnGrid = Grid.IsOnGrid(pos);
-                bool neighborExists = isOnGrid ? Grid.grid[pos.X, pos.Y] == null : false;
+                bool neighborExists = isOnGrid ? Grid.grid[pos.X, pos.Y] != null : true;
 
-                neighbors.Add(pos, neighborExists);
+                neighbors.Add(pair.Value, neighborExists);
             }
 
             return neighbors;
         }
 
-        public abstract Vector2I? Evaluate();
+        public abstract Vector2I Evaluate();
     }
 }
 

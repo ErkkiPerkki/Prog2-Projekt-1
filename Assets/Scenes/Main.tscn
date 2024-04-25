@@ -9,7 +9,7 @@ script = ExtResource("1_1xmmx")
 [node name="Grid" parent="." instance=ExtResource("2_cyyym")]
 
 [node name="GameUpdate" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.001
 autostart = true
 
 [connection signal="timeout" from="GameUpdate" to="." method="_OnGridUpdate"]

@@ -10,14 +10,29 @@ namespace ElementSandbox
 
         }
 
-        public override Vector2I? Evaluate()
+        public override Vector2I Evaluate()
         {
-            //Dictionary<Vector2I, bool> neighbors = GetNeighbors();
+            Dictionary<Vector2I, bool> neighbors = GetNeighbors();
 
-            //bool downOccupied = neighbors[Grid.Directions["DOWN"]];
-            //if (downOccupied) return null;
+            //foreach (KeyValuePair<Vector2I, bool> pair in neighbors) {
+            //    GD.Print(pair);
+            //}
+            bool downOccupied = neighbors[Grid.Directions["DOWN"]];
+            if (!downOccupied) return Vector2I.Down
+            bool bottomLeftOccupied = neighbors[Grid.Directions["BOTTOM_LEFT"]];
+            bool bottomRightOccupied = neighbors[Grid.Directions["BOTTOM_RIGHT"]];
 
-            return new (0, -1);
+            if (!bottomLeftOccupied && !bottomRightOccupied) {
+                return Main.random.Next(0, 2) == 1 ? Grid.Directions["BOTTOM_LEFT"] : Grid.Directions["BOTTOM_RIGHT"];
+            }
+            else if (!bottomLeftOccupied) {
+                return Grid.Directions["BOTTOM_LEFT"];
+            }
+            else if (!bottomRightOccupied) {
+                return Grid.Directions["BOTTOM_RIGHT"];
+            }
+
+            return Vector2I.Zero;
         }
     }
 }
