@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1gmgmys0bbxf"
-path="res://.godot/imported/sand.png-19869e85ff0ebd3cba27b34f314e0e33.ctex"
+uid="uid://diqmw02g8igst"
+path="res://.godot/imported/SandAtlas.png-4fcde5074a59bd9f14342ee8e68e4c97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/sand.png"
-dest_files=["res://.godot/imported/sand.png-19869e85ff0ebd3cba27b34f314e0e33.ctex"]
+source_file="res://Assets/Textures/SandAtlas.png"
+dest_files=["res://.godot/imported/SandAtlas.png-4fcde5074a59bd9f14342ee8e68e4c97.ctex"]
 
 [params]
 

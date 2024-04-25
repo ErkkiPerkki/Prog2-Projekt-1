@@ -5,9 +5,9 @@ namespace ElementSandbox
 {
     public class Sand: Element
     {
-        public Sand(): base(ElementID.SAND)
+        public Sand(): base(ElementID.SAND, Main.random.Next(0, 4))
         {
-
+            
         }
 
         public override Vector2I Evaluate()
@@ -18,7 +18,7 @@ namespace ElementSandbox
             //    GD.Print(pair);
             //}
             bool downOccupied = neighbors[Grid.Directions["DOWN"]];
-            if (!downOccupied) return Vector2I.Down
+            if (!downOccupied) return Vector2I.Down;
             bool bottomLeftOccupied = neighbors[Grid.Directions["BOTTOM_LEFT"]];
             bool bottomRightOccupied = neighbors[Grid.Directions["BOTTOM_RIGHT"]];
 

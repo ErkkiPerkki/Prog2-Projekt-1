@@ -6,13 +6,16 @@ namespace ElementSandbox
     public abstract class Element
     {
         private ElementID _ID;
+        private int _AtlasID;
 
+        public int AtlasID { get{return _AtlasID;} }
         public ElementID ID { get{return _ID;} }
         public Vector2I GridPosition;
 
-        public Element(ElementID ID)
+        public Element(ElementID ID, int atlasID = 0)
         {
             _ID = ID;
+            _AtlasID = atlasID;
         }
 
         public Dictionary<Vector2I, bool> GetNeighbors()

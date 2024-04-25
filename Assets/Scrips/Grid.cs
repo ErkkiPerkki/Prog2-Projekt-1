@@ -5,7 +5,8 @@ using System.Collections.Generic;
 namespace ElementSandbox
 {
     public enum ElementID {
-        SAND
+        SAND,
+        CONCRETE
     }
 
     public partial class Grid: Node2D
@@ -20,7 +21,7 @@ namespace ElementSandbox
         public static Vector2I GridSize = ScreenSize / TileSize;
 
         public static Element?[,] grid = new Element[GridSize.X, GridSize.Y];
-        public static ElementID selectedElement = ElementID.SAND;
+        public static ElementID selectedElement = ElementID.CONCRETE;
 
         enum TileAction {
             Place,
@@ -40,7 +41,8 @@ namespace ElementSandbox
 
         static Dictionary<ElementID, Func<Element>> Elements = new()
         {
-            {ElementID.SAND, () => new Sand()}
+            {ElementID.SAND, () => new Sand()},
+            {ElementID.CONCRETE, () => new Concrete()}
         };
 
         public override async void _Ready()
@@ -96,9 +98,10 @@ namespace ElementSandbox
 
                     int currentID = TileMap.GetCellSourceId(0, pos);
                     int nextID = element == null ? -1: (int)element.ID; 
-
                     if (currentID == nextID) continue;
-                    TileMap.SetCell(0, pos, nextID, new (0,0));
+
+                    int atlasID = element == null ? 0 : element.AtlasID;
+                    TileMap.SetCell(0, pos, nextID, new (atlasID,0));
                 }
             }
         }
@@ -113,19 +116,18 @@ namespace ElementSandbox
                     if (element == null) continue;
 
                     Vector2I nextMove = element.Evaluate();
+                    Vector2I nextPosition = element.GridPosition + nextMove;
+
+                    bool spotOccupied = nextGrid[nextPosition.X, nextPosition.Y] != null;
+                    if (spotOccupied) {
+                        nextGrid[element.GridPosition.X, element.GridPosition.Y] = element;
+                        continue;
+                    }
 
                     element.GridPosition += nextMove;
-                    nextGrid[element.GridPosition.X, element.GridPosition.Y] = element;
+                    nextGrid[nextPosition.X, nextPosition.Y] = element;
                 }
             }
-
-            //for (int x = 0; x < GridSize.X; x++) {
-            //    for (int y = 0; y < GridSize.Y; y++) {
-            //        if (nextGrid[x, y] == null) continue;
-
-            //        GD.Print(nextGrid[x, y]);
-            //    }
-            //}
 
             grid = nextGrid;
             DrawGrid();
