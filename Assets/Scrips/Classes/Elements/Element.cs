@@ -2,14 +2,14 @@ using Godot;
 
 namespace ElementSandbox
 {
-    public abstract partial class Element: Resource
+    public abstract class Element
     {
-        private ElementID _ID = ElementID.NONE;
+        private ElementID _ID;
 
-        public ElementID ID { get { return _ID; } }
+        public ElementID ID { get{return _ID;} }
         public Vector2I GridPosition = new Vector2I(0, 0);
 
-        public Element(ElementID ID = ElementID.NONE)
+        public Element(ElementID ID)
         {
             _ID = ID;
             //GD.Print($"New Element: [{ID}]");
