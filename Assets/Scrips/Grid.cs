@@ -106,7 +106,7 @@ namespace ElementSandbox
             }
         }
 
-        public static void _OnGridUpdate()
+        public override void _Process(double delta)
         {
             Element?[,] nextGrid = new Element[GridSize.X, GridSize.Y];
 
