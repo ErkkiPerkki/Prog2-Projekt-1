@@ -15,21 +15,16 @@ namespace ElementSandbox
 
 		public override void _Input(InputEvent @event)
 		{
-			if (Input.IsActionPressed("SwitchTileUp")) {
-				int currentElementID = (int)Grid.selectedElement;
-				
-				ElementID nextElementID = (ElementID)((currentElementID + 1) % Enum.GetNames(typeof(ElementID)).Length);
-				Grid.selectedElement = nextElementID;
+			string inputText = @event.AsText();
+			bool inputIsNumber = int.TryParse(inputText, out int inputKeycode);
 
-                GD.Print(Grid.selectedElement);
-            }
-			else if (Input.IsActionPressed("SwitchTileDown")) {
-				int currentElementID = (int)Grid.selectedElement;
-				
-				ElementID nextElementID = (ElementID)(Math.Abs(currentElementID - 1) % Enum.GetNames(typeof(ElementID)).Length);
-				Grid.selectedElement = nextElementID;
+			if (inputIsNumber) {
+				if (inputKeycode <= Enum.GetNames(typeof(ElementID)).Length) {
+                    ElementID elementID = (ElementID)inputKeycode;
 
-				GD.Print(Grid.selectedElement);
+					Grid.selectedElement = elementID;
+					GD.Print(elementID);
+                }
 			}
 		}
 

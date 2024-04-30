@@ -6,7 +6,8 @@ namespace ElementSandbox
     public enum ElementID {
         SAND,
         CONCRETE,
-        WATER
+        WATER,
+        COFFEEPOWDER
     }
 
     public abstract class Element

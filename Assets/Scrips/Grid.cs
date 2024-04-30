@@ -38,7 +38,8 @@ namespace ElementSandbox
         {
             {ElementID.SAND, () => new Sand()},
             {ElementID.CONCRETE, () => new Concrete()},
-            {ElementID.WATER, () => new Water()}
+            {ElementID.WATER, () => new Water()},
+            {ElementID.COFFEEPOWDER, () => new CoffeePowder()}
         };
 
         public override async void _Ready()
