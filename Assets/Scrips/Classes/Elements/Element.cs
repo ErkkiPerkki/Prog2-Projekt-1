@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace ElementSandbox
 {
+    public enum ElementID {
+        SAND,
+        CONCRETE,
+        WATER
+    }
+
     public abstract class Element
     {
         private ElementID _ID;

@@ -17,14 +17,19 @@ namespace ElementSandbox
 		{
 			if (Input.IsActionPressed("SwitchTileUp")) {
 				int currentElementID = (int)Grid.selectedElement;
+				
 				ElementID nextElementID = (ElementID)((currentElementID + 1) % Enum.GetNames(typeof(ElementID)).Length);
 				Grid.selectedElement = nextElementID;
-				GD.Print((int)Grid.selectedElement);
-			}
+
+                GD.Print(Grid.selectedElement);
+            }
 			else if (Input.IsActionPressed("SwitchTileDown")) {
 				int currentElementID = (int)Grid.selectedElement;
-				ElementID nextElementID = (ElementID)(Math.Abs((currentElementID - 1) % Enum.GetNames(typeof(ElementID)).Length));
+				
+				ElementID nextElementID = (ElementID)(Math.Abs(currentElementID - 1) % Enum.GetNames(typeof(ElementID)).Length);
 				Grid.selectedElement = nextElementID;
+
+				GD.Print(Grid.selectedElement);
 			}
 		}
 

@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\Godot4Projects\\Prog2-Projekt-1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\classes\\elements\\element.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\classes\\elements\\element.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\classes\\elements\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\classes\\elements\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\classes\\elements\\element.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\classes\\elements\\element.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\classes\\elements\\concrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\classes\\elements\\concrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\classes\\elements\\sand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\classes\\elements\\sand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\classes\\elements\\concrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\classes\\elements\\concrete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|d:\\godot4projects\\prog2-projekt-1\\assets\\scrips\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3611BBE2-73B4-4B43-9224-D4264B958C25}|Prog 2 Projekt 1.csproj|solutionrelative:assets\\scrips\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,66 +51,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Main.cs",
+              "RelativeDocumentMoniker": "Assets\\Scrips\\Main.cs",
+              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Main.cs",
+              "RelativeToolTip": "Assets\\Scrips\\Main.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T17:30:27.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Concrete.cs",
+              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
+              "RelativeDocumentMoniker": "Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
+              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
+              "RelativeToolTip": "Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T18:32:34.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Grid.cs",
               "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Grid.cs",
               "RelativeDocumentMoniker": "Assets\\Scrips\\Grid.cs",
               "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Grid.cs",
               "RelativeToolTip": "Assets\\Scrips\\Grid.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAAAH0AAAAAAAAA",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-25T20:08:18.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Sand.cs",
-              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Sand.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\Classes\\Elements\\Sand.cs",
-              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Sand.cs",
-              "RelativeToolTip": "Assets\\Scrips\\Classes\\Elements\\Sand.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T20:09:25.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Concrete.cs",
-              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
-              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
-              "RelativeToolTip": "Assets\\Scrips\\Classes\\Elements\\Concrete.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T20:45:31.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Element.cs",
               "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Element.cs",
               "RelativeDocumentMoniker": "Assets\\Scrips\\Classes\\Elements\\Element.cs",
               "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Element.cs",
               "RelativeToolTip": "Assets\\Scrips\\Classes\\Elements\\Element.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-25T20:08:34.99Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Main.cs",
-              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Main.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\Main.cs",
-              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Main.cs",
-              "RelativeToolTip": "Assets\\Scrips\\Main.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAEAAAA",
+              "DocumentIndex": 4,
+              "Title": "Sand.cs",
+              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Sand.cs",
+              "RelativeDocumentMoniker": "Assets\\Scrips\\Classes\\Elements\\Sand.cs",
+              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Sand.cs",
+              "RelativeToolTip": "Assets\\Scrips\\Classes\\Elements\\Sand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T20:08:18.978Z",
+              "WhenOpened": "2024-04-25T20:09:25.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Water.cs",
+              "DocumentMoniker": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Water.cs",
+              "RelativeDocumentMoniker": "Assets\\Scrips\\Classes\\Elements\\Water.cs",
+              "ToolTip": "D:\\Godot4Projects\\Prog2-Projekt-1\\Assets\\Scrips\\Classes\\Elements\\Water.cs",
+              "RelativeToolTip": "Assets\\Scrips\\Classes\\Elements\\Water.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAB8AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T17:20:56.902Z",
               "EditorCaption": ""
             }
           ]

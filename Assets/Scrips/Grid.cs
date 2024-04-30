@@ -4,11 +4,6 @@ using System.Collections.Generic;
 
 namespace ElementSandbox
 {
-    public enum ElementID {
-        SAND,
-        CONCRETE
-    }
-
     public partial class Grid: Node2D
     {
         public static TileMap TileMap;
@@ -42,7 +37,8 @@ namespace ElementSandbox
         static Dictionary<ElementID, Func<Element>> Elements = new()
         {
             {ElementID.SAND, () => new Sand()},
-            {ElementID.CONCRETE, () => new Concrete()}
+            {ElementID.CONCRETE, () => new Concrete()},
+            {ElementID.WATER, () => new Water()}
         };
 
         public override async void _Ready()
@@ -78,7 +74,7 @@ namespace ElementSandbox
             if (!tileExists) return;
 
             if (action == TileAction.Place) {
-                Element newElement = Elements[selectedElement].Invoke();
+                Element newElement = Elements[selectedElement]();
                 newElement.GridPosition = gridPos;
                 grid[gridPos.X, gridPos.Y] = newElement;
             }
