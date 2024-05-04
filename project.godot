@@ -24,6 +24,14 @@ window/size/viewport_height=720
 
 project/assembly_name="Prog 2 Projekt 1"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/Scrips/Classes/Element/": "teal",
+"res://Assets/Scrips/Classes/Element/ElementTypes/": "green",
+"res://Assets/Scrips/Classes/Element/Elements/": "yellow"
+}
+
 [input]
 
 PlaceTile={

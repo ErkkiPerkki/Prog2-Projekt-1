@@ -1,17 +1,18 @@
-using ElementSandbox;
 using Godot;
 using System.Collections.Generic;
 
-public class CoffeePowder: Element // Powder
+namespace ElementSandbox;
+
+public class Powder: Element
 {
-    public CoffeePowder(): base(ElementID.COFFEEPOWDER, Main.random.Next(0, 3))
+    public Powder(ElementID elementID, int atlasID = 0): base(elementID, atlasID)
     {
-        
+
     }
 
     public override Vector2I Evaluate()
     {
-        Dictionary<Vector2I, bool> neighbors = GetNeighbors(); 
+        Dictionary<Vector2I, bool> neighbors = GetNeighbors();
 
         bool downOccupied = neighbors[Vector2I.Down];
         if (!downOccupied) return Vector2I.Down;
@@ -21,19 +22,21 @@ public class CoffeePowder: Element // Powder
         bool leftOccupied = neighbors[Vector2I.Left];
         bool rightOccupied = neighbors[Vector2I.Right];
 
-        if ((!bottomLeftOccupied && !bottomRightOccupied) && (!leftOccupied && !rightOccupied))
-        {
+        if ((!bottomLeftOccupied && !bottomRightOccupied) && (!leftOccupied && !rightOccupied)) {
             return Main.random.Next(0, 2) == 1 ? Grid.Directions["BOTTOM_LEFT"] : Grid.Directions["BOTTOM_RIGHT"];
         }
-        else if (!bottomLeftOccupied && !leftOccupied)
-        {
+        else if (!bottomLeftOccupied && !leftOccupied) {
             return Grid.Directions["BOTTOM_LEFT"];
         }
-        else if (!bottomRightOccupied && !rightOccupied)
-        {
+        else if (!bottomRightOccupied && !rightOccupied) {
             return Grid.Directions["BOTTOM_RIGHT"];
         }
 
         return Vector2I.Zero;
+    }
+
+    public override void OnContact()
+    {
+        GD.Print("hej jag är powder");
     }
 }
