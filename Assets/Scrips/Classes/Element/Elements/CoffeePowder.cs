@@ -7,7 +7,7 @@ namespace ElementSandbox;
 public class CoffeePowder: Powder
 {
     private float _Wetness = 0;
-    public float Wetness {get{return _Wetness;}}
+    public float Wetness { get{return _Wetness;} }
 
     public CoffeePowder(): base(ElementID.COFFEEPOWDER, 0)
     {
@@ -21,10 +21,13 @@ public class CoffeePowder: Powder
         float neighborWetness = _Wetness;
         int wetNeighbors = 1;
 
-        foreach (KeyValuePair<Vector2I, bool> pair in neighbors){
+        foreach (KeyValuePair<Vector2I, bool> pair in neighbors) {
             if (!pair.Value) continue;
 
-            Element neighbor = Grid.grid[GridPosition.X + pair.Key.X, GridPosition.Y + pair.Key.Y];
+            Vector2I pos = new(GridPosition.X + pair.Key.X, GridPosition.Y + pair.Key.Y);
+            if (!Grid.IsOnGrid(pos)) continue;
+
+            Element neighbor = Grid.grid[pos.X, pos.Y];
             if (neighbor == null) continue;
 
             switch (neighbor.ID) {
@@ -34,7 +37,7 @@ public class CoffeePowder: Powder
                     break;
 
                 case ElementID.COFFEEPOWDER:
-                    if ( ((CoffeePowder)neighbor).Wetness == 0 ) break;
+                    if (((CoffeePowder)neighbor).Wetness == 0) break;
 
                     neighborWetness += ((CoffeePowder)neighbor)._Wetness;
                     wetNeighbors++;
@@ -45,11 +48,27 @@ public class CoffeePowder: Powder
             }
         }
 
-        if (wetNeighbors == 1) return;
+        //if (wetNeighbors == 1) return;
 
         float averageWetness = neighborWetness / wetNeighbors;
-        if (averageWetness != 0) GD.Print(averageWetness);
         _Wetness = averageWetness;
-        AtlasID = Math.Max((int)_Wetness, 2);
+        AtlasID = Math.Min((int)(_Wetness * 10), 9);
+
+        foreach (KeyValuePair<Vector2I, bool> pair in neighbors) {
+            if (!pair.Value) continue;
+
+            Vector2I pos = new(GridPosition.X + pair.Key.X, GridPosition.Y + pair.Key.Y);
+            if (!Grid.IsOnGrid(pos)) continue;
+
+            Element neighbor = Grid.grid[pos.X, pos.Y];
+            if (neighbor == null) continue;
+
+            if (neighbor.ID == ElementID.COFFEEPOWDER) {
+                ((CoffeePowder)neighbor)._Wetness = averageWetness;
+                neighbor.AtlasID = Math.Min((int)(((CoffeePowder)neighbor)._Wetness * 10), 9);
+                GD.Print(neighbor.AtlasID);
+            }
+        }
+
     }
 }

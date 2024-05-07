@@ -13,7 +13,8 @@ config_version=5
 config/name="Prog 2 Projekt 1"
 run/main_scene="res://Assets/Scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
-config/icon="res://Assets/Textures/icon.svg"
+config/icon="res://Assets/Textures/Icon.png"
+config/windows_native_icon="res://Assets/Textures/Icon.ico"
 
 [display]
 
