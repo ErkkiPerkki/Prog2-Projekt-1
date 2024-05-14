@@ -1,4 +1,5 @@
 using Godot;
+using System.Collections.Generic;
 
 namespace ElementSandbox;
 
@@ -14,7 +15,7 @@ public class Solid: Element
         return Vector2I.Zero;
     }
 
-    public override void OnContact()
+    public override void OnContact(List<Element> contactingNeighbors)
     {
         
     }

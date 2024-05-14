@@ -1,4 +1,6 @@
-﻿namespace ElementSandbox;
+﻿using System.Collections.Generic;
+
+namespace ElementSandbox;
 
 public class Water: Liquid
 {
@@ -7,7 +9,7 @@ public class Water: Liquid
 
     }
 
-    public override void OnContact()
+    public override void OnContact(List<Element> contactingNeighbors)
     {
         
     }

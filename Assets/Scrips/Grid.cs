@@ -124,7 +124,26 @@ public partial class Grid: Node2D
                 element.GridPosition += nextMove;
                 nextGrid[nextPosition.X, nextPosition.Y] = element;
 
-                element.OnContact();
+                // Contact stuff
+                // *Should* fill an array of elements which are laying next to the element in the current iteration
+                // This array is later passed on to the OnContact function which each element type handles differently
+                List<Element> contactingNeighbors = new List<Element>();
+
+                foreach (KeyValuePair<Vector2I, bool> pair in element.GetNeighbors()) {
+                    if (!pair.Value) continue;
+               
+                    Vector2I gridPos = new(pair.Key.X, pair.Key.Y);
+                    gridPos += element.GridPosition;
+                    if (!IsOnGrid(gridPos)) continue;
+
+                    Element? neighbor = grid[gridPos.X, gridPos.Y];
+                    if (neighbor == null) continue;
+
+                    contactingNeighbors.Add(neighbor);
+                }
+                if (contactingNeighbors.Count == 0) continue;
+
+                element.OnContact(contactingNeighbors);
             }
         }
 

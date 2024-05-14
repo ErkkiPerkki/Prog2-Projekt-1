@@ -23,7 +23,7 @@ public abstract class Element
         }
     }
 
-    public ElementID ID { get{return _ID;} }
+    public ElementID ID { get { return _ID; } set { _ID = value; } }
     public Vector2I GridPosition;
 
     public Element(ElementID ID, int atlasID)
@@ -52,7 +52,7 @@ public abstract class Element
 
     // Handles behavior where a certain tile would react
     // differently if in contact with another cell
-    public abstract void OnContact(); 
+    public abstract void OnContact(List<Element> contactingNeighbors); 
 }
 
 

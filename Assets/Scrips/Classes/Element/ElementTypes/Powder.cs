@@ -35,7 +35,7 @@ public class Powder: Element
         return Vector2I.Zero;
     }
 
-    public override void OnContact()
+    public override void OnContact(List<Element> contactingNeighbors)
     {
         GD.Print("hej jag är powder");
     }

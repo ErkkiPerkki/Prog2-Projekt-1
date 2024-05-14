@@ -45,7 +45,7 @@ public class Liquid: Element
         return Vector2I.Zero;
     }
 
-    public override void OnContact()
+    public override void OnContact(List<Element> contactingNeighbors)
     {
         
     }

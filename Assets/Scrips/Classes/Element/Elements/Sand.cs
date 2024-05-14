@@ -10,7 +10,7 @@ public class Sand: Powder
         
     }
 
-    public override void OnContact()
+    public override void OnContact(List<Element> contactingNeighbors)
     {
 
     }

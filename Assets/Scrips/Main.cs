@@ -20,7 +20,8 @@ namespace ElementSandbox
 
 			if (inputIsNumber) {
 				if (inputKeycode <= Enum.GetNames(typeof(ElementID)).Length) {
-                    ElementID elementID = (ElementID)inputKeycode;
+                    ElementID elementID = (ElementID)inputKeycode - 1;
+					GD.Print(inputKeycode - 1);
 
 					Grid.selectedElement = elementID;
 					GD.Print(elementID);
