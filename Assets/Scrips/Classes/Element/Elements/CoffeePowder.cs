@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 namespace ElementSandbox;
 
+// CoffeePowder is an element which when combined with water WAS supposed to slowly convert into
+// liquid coffee
 public class CoffeePowder: Powder
 {
     private float _Wetness = 0;
@@ -14,6 +16,7 @@ public class CoffeePowder: Powder
         
     }
 
+    // CoffeePowder logic
     public override void OnContact(List<Element> contactingNeighbors)
     {
         float neighborWetness = _Wetness;

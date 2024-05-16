@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace ElementSandbox;
 
+// Each value in ElementID corresponds to a tilset id which is used
+// to display the corresponding texture for each element
 public enum ElementID {
     SAND,
     CONCRETE,
@@ -10,6 +12,9 @@ public enum ElementID {
     COFFEEPOWDER
 }
 
+
+// The Element class is the base class for all elements.
+// It stores common data for all elements like ElementID and GridPosition
 public abstract class Element
 {
     private ElementID _ID;
@@ -17,10 +22,7 @@ public abstract class Element
 
     public int AtlasID {
         get {return _AtlasID;}
-        set {
-            // Add safety checks
-            _AtlasID = value;
-        }
+        set {_AtlasID = value;}
     }
 
     public ElementID ID { get { return _ID; } set { _ID = value; } }
@@ -32,6 +34,10 @@ public abstract class Element
         _AtlasID = atlasID;
     }
 
+    /// <summary>
+    /// Returns a dictionary containing a Vector2I direction as key and a bool as value indicating if a
+    /// neighbor exists in that direction
+    /// </summary>
     public Dictionary<Vector2I, bool> GetNeighbors()
     {
         Dictionary<Vector2I, bool> neighbors = new();

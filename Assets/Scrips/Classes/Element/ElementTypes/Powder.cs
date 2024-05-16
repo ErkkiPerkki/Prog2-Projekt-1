@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ElementSandbox;
 
+// The Powder class inherits from Element and handles the default logic for all powder elements
 public class Powder: Element
 {
     public Powder(ElementID elementID, int atlasID = 0): base(elementID, atlasID)
@@ -10,6 +11,7 @@ public class Powder: Element
 
     }
 
+    // Powder logic
     public override Vector2I Evaluate()
     {
         Dictionary<Vector2I, bool> neighbors = GetNeighbors();
@@ -37,6 +39,6 @@ public class Powder: Element
 
     public override void OnContact(List<Element> contactingNeighbors)
     {
-        GD.Print("hej jag är powder");
+        
     }
 }

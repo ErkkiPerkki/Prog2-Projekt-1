@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ElementSandbox;
 
+// The Liquid class inherits from Element and handles the default logic for all liquid elements
 public class Liquid: Element
 {
     public Liquid(ElementID elementID, int atlasID = 0): base(elementID, atlasID)
@@ -10,6 +11,7 @@ public class Liquid: Element
 
     }
 
+    // Liquid logic
     public override Vector2I Evaluate()
     {
         Dictionary<Vector2I, bool> neighbors = GetNeighbors();
